@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Arnau Meseguer">
+    <meta name="keywords" content="Pàgina inicial">
+    <meta name="description" content="Pàgina inicial de la web">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pàgina Principal</title>
+    <link rel="stylesheet" href="css/estils.css">
+    <script src="components/script.js" defer></script>
+</head>
+<body id="index">
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img src="img/Inici.png" alt="Inici" class="nav-icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="Minecraft.html">
+                        <img src="img/MinecraftLogo.png" alt="Minecraft" class="nav-icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="Roblox.html">
+                        <img src="img/RobloxLogo.jpeg" alt="Roblox" class="nav-icon">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div id="rellotge">00:00</div>
+    </header>
+
+    <main>
+        <h1>Benvinguts al meu lloc web</h1>
+        <p class="text-marge">Aquesta és la pàgina inicial. Aquí pots trobar més informació sobre els teus jocs preferits!</p>
+        <p class="text-marge">Navega pels enllaços per investigar.</p>
+        <section id="Minecraft" class="interactiva"
+         onmouseover="resaltarSeccio()"
+         onmouseout="restaurarSeccio()">
+    <h2>Secció Minecraft</h2>
+    <p id="MinecraftMain">Explora el món de Minecraft fent servir eines creatives i lúdiques!</p>
+    <p id="paragrafOcult" class="ocult">Minecraft et permet construir, explorar i sobreviure en un món de blocs infinit!</p>
+</section>
+
+        
+        <div class="miniatures">
+            <img src="img/miniatura1.png" alt="Miniatura 1">
+            <img src="img/miniatura2.png" alt="Miniatura 2">
+            <img src="img/miniatura3.png" alt="Miniatura 3">
+        </div>
+        
+
+        
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Arnau Meseguer Sancho</p>
+    </footer>
+</body>
+</html>

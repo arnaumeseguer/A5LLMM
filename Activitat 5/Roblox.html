@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Arnau Meseguer">
+  <meta name="keywords" content="Roblox, Jocs, Accés restringit">
+  <meta name="description" content="Pàgina de Roblox amb accés restringit i galeria d’imatges.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roblox Galeria</title>
+  <link rel="stylesheet" href="css/estils.css">
+  <script>
+    function desbloquejarContingut() {
+      const pass1 = document.getElementById("pass1").value;
+      const pass2 = document.getElementById("pass2").value;
+      if (pass1.length < 8) {
+        alert("La contrasenya ha de tenir almenys 8 caràcters.");
+        return false;
+      }
+      if (pass1 !== pass2) {
+        alert("Les contrasenyes no coincideixen.");
+        return false;
+      }
+      document.getElementById("formulari-acces").style.display = "none";
+      document.getElementById("contingut").style.display = "block";
+      return false; // evita l'enviament del formulari
+    }
+
+    function canviaImatge(ruta) {
+      const imgGran = document.getElementById('imatgeGran');
+      imgGran.style.opacity = 0;
+      setTimeout(() => {
+        imgGran.src = ruta;
+        imgGran.onload = () => {
+          imgGran.style.opacity = 1;
+        };
+      }, 300);
+    }
+  </script>
+</head>
+<body id="roblox">
+  <!-- Formulari d'accés -->
+  <div id="formulari-acces">
+    <h2>Accés restringit</h2>
+    <p>Introdueix la contrasenya per continuar:</p>
+    <form onsubmit="return desbloquejarContingut()">
+      <input type="password" id="pass1" placeholder="Contrasenya" required>
+      <input type="password" id="pass2" placeholder="Repeteix contrasenya" required>
+      <input type="submit" value="Entrar">
+    </form>
+  </div>
+
+  <!-- Contingut amagat fins que la contrasenya sigui correcta -->
+  <div id="contingut" style="display: none;">
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">
+              <img src="img/Inici.png" alt="Inici" class="nav-icon">
+            </a>
+          </li>
+          <li>
+            <a href="Minecraft.html">
+              <img src="img/MinecraftLogo.png" alt="Minecraft" class="nav-icon">
+            </a>
+          </li>
+          <li>
+            <a href="Roblox.html" class="actiu">
+              <img src="img/RobloxLogo.jpeg" alt="Roblox" class="nav-icon">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Galeria Roblox</h1>
+      <div class="miniatures">
+        <div class="opcio"><img src="img/Roblox1.jpg" alt="Miniatura 1" onclick="canviaImatge('img/Roblox1.jpg')"></div>
+        <div class="opcio"><img src="img/Roblox2.jpg" alt="Miniatura 2" onclick="canviaImatge('img/Roblox2.jpg')"></div>
+        <div class="opcio"><img src="img/Roblox3.jpg" alt="Miniatura 3" onclick="canviaImatge('img/Roblox3.jpg')"></div>
+        <div class="opcio"><img src="img/Roblox4.jpg" alt="Miniatura 4" onclick="canviaImatge('img/Roblox4.jpg')"></div>
+        <div class="opcio"><img src="img/Roblox5.jpg" alt="Miniatura 5" onclick="canviaImatge('img/Roblox5.jpg')"></div>
+        <div class="opcio"><img src="img/Roblox6.jpg" alt="Miniatura 6" onclick="canviaImatge('img/Roblox6.jpg')"></div>
+      </div>
+
+      <div class="imatge-gran">
+        <img id="imatgeGran" src="img/Roblox1.jpg" alt="Imatge Gran">
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Arnau Meseguer Sancho</p>
+    </footer>
+  </div>
+</body>
+</html>
