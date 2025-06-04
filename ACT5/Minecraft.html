@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Arnau Meseguer">
+  <meta name="keywords" content="Minecraft">
+  <meta name="description" content="Breu descripció sobre Minecraft">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft</title>
+  <link rel="stylesheet" href="css/estils.css">
+
+  <script>
+    let segons = 0;
+    function actualitzarRellotge() {
+      segons++;
+      const minuts = Math.floor(segons / 60);
+      const restants = segons % 60;
+      document.getElementById("rellotge").textContent = 
+        `${minuts.toString().padStart(2, '0')}:${restants.toString().padStart(2, '0')}`;
+    }
+    setInterval(actualitzarRellotge, 1000);
+  </script>
+</head>
+<body id="Minecraft">
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">
+            <img src="img/Inici.png" alt="Inici" class="nav-icon">
+          </a>
+        </li>
+        <li>
+          <a href="Minecraft.html">
+            <img src="img/MinecraftLogo.png" alt="Minecraft" class="nav-icon">
+          </a>
+        </li>
+        <li>
+          <a href="Roblox.html">
+            <img src="img/RobloxLogo.jpeg" alt="Roblox" class="nav-icon">
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div id="rellotge">00:00</div>
+  </header>
+
+  <main>
+    <h1>Minecraft</h1>
+    <p id="MinecraftMain">
+      <a href="https://www.minecraft.net/en-us">Minecraft</a> és un joc independent de món obert desenvolupat per Mojang. Va ser creat originalment pel programador suec Markus "Notch" Persson. Va sortir en versió alfa el 2009 i la versió definitiva el 2011.
+    </p>
+
+    <div class="miniatures">
+      <img src="img/minecraft.jpg" alt="Miniatura 1" onclick="canviaImatge('img/gran1.jpg')">
+      <img src="img/minecraft2.jpg" alt="Miniatura 2" onclick="canviaImatge('img/gran2.jpg')">
+      <img src="img/minecraft3.jpg" alt="Miniatura 3" onclick="canviaImatge('img/gran3.jpg')"> 
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Arnau Meseguer Sancho</p>
+  </footer>
+
+  <!-- Galeria funció JS -->
+  <script>
+    function canviaImatge(novaSrc) {
+      const gran = document.getElementById("imatgeGran");
+      gran.style.opacity = 0;
+      setTimeout(() => {
+        gran.src = novaSrc;
+        gran.style.opacity = 1;
+      }, 200);
+    }
+  </script>
+</body>
+</html>

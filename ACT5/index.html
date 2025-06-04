@@ -31,8 +31,6 @@
                 </li>
             </ul>
         </nav>
-        
-        <div id="rellotge">00:00</div>
     </header>
 
     <main>
@@ -62,5 +60,23 @@
     <footer>
         <p>&copy; 2024 Arnau Meseguer Sancho</p>
     </footer>
+    <!-- L'script asta dins del bodyyyyyyy-->
+    <script>
+    function resaltarSeccio() {
+  const seccio = document.getElementById("Minecraft");
+  const paragraf = document.getElementById("paragrafOcult");
+
+  seccio.classList.add("resaltat");
+  paragraf.style.display = "block";
+}
+
+function restaurarSeccio() {
+  const seccio = document.getElementById("Minecraft");
+  const paragraf = document.getElementById("paragrafOcult");
+
+  seccio.classList.remove("resaltat");
+  paragraf.style.display = "none";
+}
+    </script>
 </body>
 </html>
